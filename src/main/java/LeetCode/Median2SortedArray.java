@@ -1,6 +1,6 @@
 package LeetCode;
 
-public class Merge2SortedArray {
+public class Median2SortedArray {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if( nums1.length> nums2.length)
             return findMedianSortedArrays(nums2,nums1);
@@ -31,7 +31,7 @@ public class Merge2SortedArray {
         return 0.0;
     }
     public static void main(String[] args) {
-        Merge2SortedArray m = new Merge2SortedArray();
+        Median2SortedArray m = new Median2SortedArray();
                 m.findMedianSortedArrays(new int[]{1,2,4},new int[]{3,5,9});
     }
 }
