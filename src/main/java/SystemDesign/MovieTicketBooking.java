@@ -15,6 +15,9 @@ public class MovieTicketBooking {
 
     class Movie {
         int movieId;
+        String movieName;
+        String movieLanguage;
+        String movieGenre;
         int theaterId;
         boolean movieAvailability;
     }
