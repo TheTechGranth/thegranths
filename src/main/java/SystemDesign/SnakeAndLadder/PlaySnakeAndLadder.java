@@ -23,7 +23,7 @@ public class PlaySnakeAndLadder {
         Map<String,Integer> playersCurrentPosition = new HashMap<>();
         playersCurrentPosition.put("Alberts",0);
         playersCurrentPosition.put("Pintoss",0);
-        GameBoard gb=new GameBoard(dice,allPlayers,snakes,ladders,playersCurrentPosition);
+        GameBoard gb=new GameBoard(dice,allPlayers,snakes,ladders,playersCurrentPosition,100);
         gb.startGame();
     }
 }

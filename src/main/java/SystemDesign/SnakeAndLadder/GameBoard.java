@@ -11,14 +11,15 @@ class GameBoard {
     private List<Jumper> snakes;
     private  List<Jumper> ladders;
     private  Map<String,Integer> playersCurrentPosition;
-    int boardSize=100;
+    int boardSize;
 
-     GameBoard(Dice dice, Queue<Player> nextTurn, List<Jumper> snakes, List<Jumper> ladders,Map<String,Integer> playersCurrentPosition) {
+     GameBoard(Dice dice, Queue<Player> nextTurn, List<Jumper> snakes, List<Jumper> ladders,Map<String,Integer> playersCurrentPosition,int boardSize) {
         this.dice = dice;
         this.nextTurn = nextTurn;
         this.snakes = snakes;
         this.ladders = ladders;
         this.playersCurrentPosition = playersCurrentPosition;
+        this.boardSize = boardSize;
     }
 
      void startGame(){
