@@ -18,8 +18,8 @@ public class PlaySnakeAndLadder {
         Jumper ladder1 = new Jumper(5,25);
         Jumper ladder2 = new Jumper(40,89);
         List<Jumper> ladders = new ArrayList<>();
-        snakes.add(ladder1);
-        snakes.add(ladder2);
+        ladders.add(ladder1);
+        ladders.add(ladder2);
         Map<String,Integer> playersCurrentPosition = new HashMap<>();
         playersCurrentPosition.put("Alberts",0);
         playersCurrentPosition.put("Pintoss",0);

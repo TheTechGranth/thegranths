@@ -45,7 +45,7 @@ class GameBoard {
                         nextPosition[0] = v.endPoint;
                         b[0]=true;
                     } } );
-                if(nextPosition[0] != nextCell && !b[0]) System.out.println(player.getPlayerName() + " Got ladder present at: "+ nextCell);
+                if(nextPosition[0] != nextCell && b[0]) System.out.println(player.getPlayerName() + " Got ladder present at: "+ nextCell);
                 if(nextPosition[0] == boardSize){
                     System.out.println(player.getPlayerName() + " won the game");
                 }else{
