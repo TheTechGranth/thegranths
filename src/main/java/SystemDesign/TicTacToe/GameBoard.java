@@ -31,7 +31,7 @@ public class GameBoard {
             count++;
             if (count==10){
                 System.out.println( "Match draw");
-                gameOver=true;
+                break;
             }
             Player p = nextTurn.poll();
             int val = nextMove();
