@@ -4,7 +4,6 @@ import SystemDesign.ParkingLot.Model.ParkingSlotType;
 import SystemDesign.ParkingLot.Model.Vehicle;
 import SystemDesign.ParkingLot.Model.VehicleCategory;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class ParkingFloor {
