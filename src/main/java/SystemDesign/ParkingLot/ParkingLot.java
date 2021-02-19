@@ -16,7 +16,7 @@ public class ParkingLot {
     private String nameOfParkingLot;
     private Address address;
     private List<ParkingFloor> parkingFloors;
-    ParkingLot parkingLot=null;
+    private static ParkingLot parkingLot=null;
 
     private  ParkingLot(String nameOfParkingLot, Address address, List<ParkingFloor> parkingFloors) {
         this.nameOfParkingLot = nameOfParkingLot;
@@ -24,7 +24,7 @@ public class ParkingLot {
         this.parkingFloors = parkingFloors;
     }
 
-    public ParkingLot getInstance (String nameOfParkingLot, Address address, List<ParkingFloor> parkingFloors) {
+    public static ParkingLot getInstance (String nameOfParkingLot, Address address, List<ParkingFloor> parkingFloors) {
         if(parkingLot == null){
             parkingLot = new ParkingLot(nameOfParkingLot,address,parkingFloors);
         }
@@ -55,6 +55,7 @@ public class ParkingLot {
         ParkingSlot parkingSlot=null;
         for(ParkingFloor floor : parkingFloors){
             parkingSlot = floor.getRelevantSlotForVehicle(vehicle);
+            if(parkingSlot!= null) break;
         }
         return parkingSlot;
     }

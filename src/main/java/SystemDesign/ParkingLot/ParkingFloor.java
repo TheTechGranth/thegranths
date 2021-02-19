@@ -20,8 +20,10 @@ public class ParkingFloor {
         Map<String,ParkingSlot> relevantParkingSlot = parkingSlots.get(parkingSlotType);
         ParkingSlot slot =null ;
         for(Map.Entry<String,ParkingSlot> m : relevantParkingSlot.entrySet()){
-            if(m.getValue().isAvailable) slot = m.getValue();
-            break;
+            if(m.getValue().isAvailable) {
+                slot = m.getValue();
+                break;
+            }
         }
 
         return slot;

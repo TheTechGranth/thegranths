@@ -2,6 +2,7 @@ package SystemDesign.ParkingLot;
 
 import SystemDesign.ParkingLot.Model.ParkingSlotType;
 import SystemDesign.ParkingLot.Model.Vehicle;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,12 +11,16 @@ import lombok.Setter;
 public class ParkingSlot {
     String name;
 
-    public ParkingSlot(String name) {
-        this.name = name;
-    }
-    boolean isAvailable;
+
+    @Builder.Default
+    boolean isAvailable = true;
     Vehicle vehicle;
     ParkingSlotType parkingSlotType;
+
+    public ParkingSlot(String name, ParkingSlotType parkingSlotType) {
+        this.name = name;
+        this.parkingSlotType = parkingSlotType;
+    }
 
     private void addVehicle(Vehicle vehicle){
         this.vehicle = vehicle;
