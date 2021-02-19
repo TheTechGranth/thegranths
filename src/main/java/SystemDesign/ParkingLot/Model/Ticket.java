@@ -1,5 +1,6 @@
 package SystemDesign.ParkingLot.Model;
 
+import SystemDesign.ParkingLot.ParkingSlot;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,11 +15,11 @@ public class Ticket {
     long startTime;
     long endTime;
     VehicleCategory vehicleCategory;
-    ParkingSlotType parkingSlotType;
+    ParkingSlot parkingSlot;
 
-    public static Ticket createTicket(String vehicleNumber,VehicleCategory vehicleCategory,ParkingSlotType parkingSlotType){
+    public static Ticket createTicket(String vehicleNumber,VehicleCategory vehicleCategory,ParkingSlot parkingSlot){
         return Ticket.builder()
-                .parkingSlotType(parkingSlotType)
+                .parkingSlot(parkingSlot)
                 .startTime(System.currentTimeMillis())
                 .vehicleNumber(vehicleNumber)
                 .ticketNumber(vehicleNumber+System.currentTimeMillis())

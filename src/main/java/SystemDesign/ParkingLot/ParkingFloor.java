@@ -22,6 +22,7 @@ public class ParkingFloor {
         for(Map.Entry<String,ParkingSlot> m : relevantParkingSlot.entrySet()){
             if(m.getValue().isAvailable) {
                 slot = m.getValue();
+                m.getValue().setAvailable(false);
                 break;
             }
         }
