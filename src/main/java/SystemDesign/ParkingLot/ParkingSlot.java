@@ -10,8 +10,6 @@ import lombok.Setter;
 @Setter
 public class ParkingSlot {
     String name;
-
-
     @Builder.Default
     boolean isAvailable = true;
     Vehicle vehicle;
@@ -22,12 +20,12 @@ public class ParkingSlot {
         this.parkingSlotType = parkingSlotType;
     }
 
-    private void addVehicle(Vehicle vehicle){
+    protected void addVehicle(Vehicle vehicle){
         this.vehicle = vehicle;
         this.isAvailable=false;
     }
 
-    private void removeVehicle(Vehicle vehicle){
+    protected void removeVehicle(Vehicle vehicle){
         this.vehicle=null;
         this.isAvailable=true;
     }

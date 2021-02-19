@@ -11,19 +11,17 @@ import java.time.LocalDate;
 @Setter
 public class Ticket {
     String ticketNumber;
-    String vehicleNumber;
     long startTime;
     long endTime;
-    VehicleCategory vehicleCategory;
+    Vehicle vehicle;
     ParkingSlot parkingSlot;
 
-    public static Ticket createTicket(String vehicleNumber,VehicleCategory vehicleCategory,ParkingSlot parkingSlot){
+    public static Ticket createTicket(Vehicle vehicle,ParkingSlot parkingSlot){
         return Ticket.builder()
                 .parkingSlot(parkingSlot)
                 .startTime(System.currentTimeMillis())
-                .vehicleNumber(vehicleNumber)
-                .ticketNumber(vehicleNumber+System.currentTimeMillis())
-                .vehicleCategory(vehicleCategory)
+                .vehicle(vehicle)
+                .ticketNumber(vehicle.getVehicleNumber()+System.currentTimeMillis())
                 .build();
     }
 }

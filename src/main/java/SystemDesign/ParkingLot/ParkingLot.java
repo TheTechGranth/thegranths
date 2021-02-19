@@ -47,8 +47,16 @@ public class ParkingLot {
         return parkingTicket;
     }
 
+    public double scanAndPay(Ticket ticket){
+        long endTime = System.currentTimeMillis();
+        ticket.getParkingSlot().removeVehicle(ticket.getVehicle());
+        int duration = (int) (endTime-ticket.getStartTime())/1000;
+        double price = ticket.getParkingSlot().getParkingSlotType().getPriceForParking(duration);
+        return price;
+    }
+
     private Ticket createTicketForSlot(ParkingSlot parkingSlot, Vehicle vehicle) {
-        return Ticket.createTicket(vehicle.getVehicleNumber(),vehicle.getVehicleCategory(),parkingSlot);
+        return Ticket.createTicket(vehicle,parkingSlot);
     }
 
     private ParkingSlot getParkingSlotForVehicle(Vehicle vehicle) {
@@ -58,14 +66,6 @@ public class ParkingLot {
             if(parkingSlot!= null) break;
         }
         return parkingSlot;
-    }
-
-    public double scanAndPay(Ticket ticket){
-        long endTime = System.currentTimeMillis();
-        ticket.getParkingSlot().setAvailable(true);
-        int duration = (int) (endTime-ticket.getStartTime())/1000;
-        double price = ticket.getParkingSlot().getParkingSlotType().getPriceForParking(duration);
-        return price;
     }
 
 }
