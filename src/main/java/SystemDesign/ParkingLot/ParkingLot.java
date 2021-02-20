@@ -42,8 +42,10 @@ public class ParkingLot {
 
     public Ticket assignTicket(Vehicle vehicle){
         //to assign ticket we need parking slot for this vehicle
-        ParkingSlot parkingSlot = getParkingSlotForVehicle(vehicle);
+        ParkingSlot parkingSlot = getParkingSlotForVehicleAndPark(vehicle);
+        if(parkingSlot == null) return null;
         Ticket parkingTicket = createTicketForSlot(parkingSlot,vehicle);
+        //persist ticket to database
         return parkingTicket;
     }
 
@@ -52,6 +54,7 @@ public class ParkingLot {
         ticket.getParkingSlot().removeVehicle(ticket.getVehicle());
         int duration = (int) (endTime-ticket.getStartTime())/1000;
         double price = ticket.getParkingSlot().getParkingSlotType().getPriceForParking(duration);
+        //persist record to database
         return price;
     }
 
@@ -59,10 +62,10 @@ public class ParkingLot {
         return Ticket.createTicket(vehicle,parkingSlot);
     }
 
-    private ParkingSlot getParkingSlotForVehicle(Vehicle vehicle) {
+    private ParkingSlot getParkingSlotForVehicleAndPark(Vehicle vehicle) {
         ParkingSlot parkingSlot=null;
         for(ParkingFloor floor : parkingFloors){
-            parkingSlot = floor.getRelevantSlotForVehicle(vehicle);
+            parkingSlot = floor.getRelevantSlotForVehicleAndPark(vehicle);
             if(parkingSlot!= null) break;
         }
         return parkingSlot;

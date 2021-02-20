@@ -14,7 +14,7 @@ public class ParkingFloor {
         this.parkingSlots = parkingSlots;
     }
 
-    public ParkingSlot getRelevantSlotForVehicle(Vehicle vehicle) {
+    public ParkingSlot getRelevantSlotForVehicleAndPark(Vehicle vehicle) {
         VehicleCategory vehicleCategory = vehicle.getVehicleCategory();
         ParkingSlotType parkingSlotType = pickCorrectSlot(vehicleCategory);
         Map<String,ParkingSlot> relevantParkingSlot = parkingSlots.get(parkingSlotType);
