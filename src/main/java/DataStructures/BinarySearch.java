@@ -1,4 +1,4 @@
-package DataStructures.LinkedList;
+package DataStructures;
 
 public class BinarySearch {
     public int searchInsert(int[] nums, int target) {

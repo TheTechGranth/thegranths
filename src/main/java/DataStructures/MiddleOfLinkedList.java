@@ -1,4 +1,4 @@
-package DataStructures.LinkedList;
+package DataStructures;
 
 public class MiddleOfLinkedList {
     public ListNode middleNode(ListNode head) {

@@ -1,4 +1,4 @@
-package DataStructures.LinkedList;
+package DataStructures;
 
 public class DetectLoopInLinkedList {
     public boolean hasCycle(ListNode head) {

@@ -1,4 +1,4 @@
-package DataStructures.LinkedList;
+package DataStructures;
 
 public class Queue {
     int[] arr = new int[100];
