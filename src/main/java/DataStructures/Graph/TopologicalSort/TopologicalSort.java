@@ -18,25 +18,35 @@ public class TopologicalSort {
     }
 
     public static void main(String[] args) {
-        Vertex vA = new Vertex("A");
-        Vertex vB = new Vertex("B");
-        Vertex vC = new Vertex("C");
-        Vertex vD = new Vertex("D");
-        Vertex vE = new Vertex("E");
+        Vertex v1 = new Vertex("1");
+        Vertex v2 = new Vertex("2");
+        Vertex v3 = new Vertex("3");
+        Vertex v4 = new Vertex("4");
+        Vertex v5 = new Vertex("5");
+        Vertex v6 = new Vertex("6");
+        Vertex v7 = new Vertex("7");
+        Vertex v8 = new Vertex("8");
+        Vertex v9 = new Vertex("9");
+        Vertex v10 = new Vertex("10");
 
-        vA.addAdjacentVertex(vB);
-        vA.addAdjacentVertex(vC);
-
-        vB.addAdjacentVertex(vE);
-
-        vC.addAdjacentVertex(vD);
-        vC.addAdjacentVertex(vB);
-
-        vD.addAdjacentVertex(vB);
+        v1.addAdjacentVertex(v2);
+        v1.addAdjacentVertex(v3);
+        v1.addAdjacentVertex(v4);
+        v2.addAdjacentVertex(v5);
+        v2.addAdjacentVertex(v6);
+        v3.addAdjacentVertex(v8);
+        v4.addAdjacentVertex(v9);
+        v5.addAdjacentVertex(v7);
+        v6.addAdjacentVertex(v7);
+        v7.addAdjacentVertex(v10);
+        v8.addAdjacentVertex(v10);
+        v9.addAdjacentVertex(v10);
 
         TopologicalSort topologicalSort = new TopologicalSort();
-        topologicalSort.dfs(vA);
-        topologicalSort.stack.forEach( v -> System.out.println(" Vertex is :" + v ));
+        topologicalSort.dfs(v1);
+        while(!topologicalSort.stack.isEmpty()){
+            System.out.println("vertex is : " + topologicalSort.stack.pop());
+        }
 
     }
 }
