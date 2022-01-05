@@ -8,7 +8,7 @@ public class SubsetSum {
         this.dp = new boolean [wt.length+1][sum+1];
     }
 
-    private boolean subsetSum(int[] wt, int sum){
+    public boolean subsetSum(int[] wt, int sum){
         for(int i=0;i<=sum;i++){
             dp[0][i] = false;
         }
@@ -25,6 +25,10 @@ public class SubsetSum {
             }
         }
         return dp[wt.length][sum];
+    }
+
+    public boolean[][] getDp() {
+        return this.dp;
     }
 
     public static void main(String[] args) {
