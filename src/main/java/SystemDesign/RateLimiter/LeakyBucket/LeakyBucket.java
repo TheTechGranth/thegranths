@@ -1,5 +1,7 @@
 package SystemDesign.RateLimiter.LeakyBucket;
 
+import SystemDesign.RateLimiter.RateLimiter;
+
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
