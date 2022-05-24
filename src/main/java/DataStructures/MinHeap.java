@@ -16,10 +16,6 @@ public class MinHeap {
     private int getRightChildIndex (int parentIndex) { return (2*parentIndex) + 2; }
     private int getParentIndex(int childIndex) { return (childIndex-1)/2;}
 
-    //private int getLeftChild (int parentIndex) { return heap[getLeftChildIndex(parentIndex)]; }
-    //private int getRightChild (int parentIndex) { return heap[getRightChildIndex(parentIndex)]; }
-    private int getParent(int childIndex) { return heap[getParentIndex(childIndex)]; }
-
     // here reSizeHeap method can also take a load factor as input
     private void reSizeHeap() {
         if(size == capacity) {
@@ -66,7 +62,7 @@ public class MinHeap {
     private void heapifyUp() {
         int index = size - 1;
         while(getParentIndex(index) >=0){
-            if(getParent(index) > heap[index]) {
+            if(heap[getParentIndex(index)] > heap[index]) {
                 swap(getParentIndex(index), index);
                 index = getParentIndex(index);
             }else break;
@@ -79,11 +75,11 @@ public class MinHeap {
         heap[index] = val;
     }
 
-    public void printHeap(){
+    private void printHeap(){
         for (int i =0;i<size;i++) {
             System.out.print(heap[i] + "->");
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public static void main(String[] args) {
