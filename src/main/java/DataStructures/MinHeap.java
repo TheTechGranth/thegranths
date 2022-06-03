@@ -7,8 +7,8 @@ public class MinHeap {
     int size = 0;
     int[] heap;
 
-    public MinHeap(int capacity) {
-        this.capacity = capacity;
+    public MinHeap() {
+        this.capacity = 10;
         heap = new int[capacity];
     }
 
@@ -83,7 +83,7 @@ public class MinHeap {
     }
 
     public static void main(String[] args) {
-        MinHeap minHeap = new MinHeap(5);
+        MinHeap minHeap = new MinHeap();
         minHeap.insert(4);
         minHeap.insert(10);
         minHeap.insert(3);
