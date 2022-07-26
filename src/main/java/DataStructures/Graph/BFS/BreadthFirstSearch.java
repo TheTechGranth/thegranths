@@ -33,15 +33,16 @@ public class BreadthFirstSearch {
         Vertex vC = new Vertex("C");
         Vertex vD = new Vertex("D");
         Vertex vE = new Vertex("E");
+        Vertex vF = new Vertex("F");
 
         vA.addAdjacentVertex(vB);
         vA.addAdjacentVertex(vC);
 
         vB.addAdjacentVertex(vD);
 
-        vC.addAdjacentVertex(vD);
-
         vD.addAdjacentVertex(vE);
+
+        vD.addAdjacentVertex(vF);
 
         BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
         breadthFirstSearch.bfs(vA);
