@@ -8,7 +8,7 @@ public class Vertex {
     List<Edge> adjVertex;
     Vertex previousVertex;
     boolean visited;
-    double minDistance;
+    int minDistance;
 
     public Vertex(String name) {
         this.name = name;
@@ -20,11 +20,11 @@ public class Vertex {
         return name;
     }
 
-    public double getMinDistance() {
+    public int getMinDistance() {
         return minDistance;
     }
 
-    public void setMinDistance(double minDistance) {
+    public void setMinDistance(int minDistance) {
         this.minDistance = minDistance;
     }
 

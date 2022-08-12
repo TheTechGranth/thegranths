@@ -1,19 +1,19 @@
 package DataStructures.Graph.DijkstraAlgorithm;
 
 public class Edge {
-    double weight;
+    int weight;
     Vertex targetVertex;
 
-    public Edge(Vertex targetVertex, double weight) {
+    public Edge(Vertex targetVertex, int weight) {
         this.weight = weight;
         this.targetVertex = targetVertex;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
