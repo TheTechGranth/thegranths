@@ -8,12 +8,12 @@ public class Vertex {
     boolean visited;
     List<Edge> adjList;
     Vertex prevVertex;
-    double minDistance;
+    int minDistance;
 
     public Vertex(String name) {
         this.name = name;
         this.adjList = new ArrayList<>();
-        this.minDistance = Double.MAX_VALUE;
+        this.minDistance = Integer.MAX_VALUE;
     }
 
     public boolean isVisited() {
@@ -40,11 +40,11 @@ public class Vertex {
         this.prevVertex = prevVertex;
     }
 
-    public double getMinDistance() {
+    public int getMinDistance() {
         return minDistance;
     }
 
-    public void setMinDistance(double minDistance) {
+    public void setMinDistance(int minDistance) {
         this.minDistance = minDistance;
     }
 

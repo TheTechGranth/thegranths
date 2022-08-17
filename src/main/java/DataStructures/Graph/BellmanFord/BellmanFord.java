@@ -19,7 +19,7 @@ public class BellmanFord {
             for(Edge edge : edgeList ){
                 Vertex u = edge.getSource();
                 Vertex v = edge.getDestination();
-                if(u.getMinDistance() == Double.MAX_VALUE) continue;
+                if(u.getMinDistance() == Integer.MAX_VALUE) continue;
                 if(u.getMinDistance() + edge.getWeight() < v.getMinDistance()){
                     v.setMinDistance(u.getMinDistance() + edge.getWeight());
                     v.setPrevVertex(u);

@@ -1,17 +1,17 @@
 package DataStructures.Graph.BellmanFord;
 
 public class Edge {
-    double weight;
+    int weight;
     Vertex source;
     Vertex destination;
 
-    public Edge(Vertex source, Vertex destination,double weight) {
+    public Edge(Vertex source, Vertex destination,int weight) {
         this.weight = weight;
         this.source = source;
         this.destination = destination;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
